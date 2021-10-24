@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <title>BaroTube - NPM</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <link rel="stylesheet" href="/css/main.css" />
+   </head>
+   <body class="landing is-preload">
+      <div id="page-wrapper">
+         <!-- Header -->
+         <header id="header" class="alt">
+            <h1><a href="/">BaroTube - NPM</a> by mr baris</h1>
+            <nav id="nav">
+               <ul>
+                  <li><a href="/">Home</a></li>
+                  <% if (!user) { %>
+                    <li><a href="/login" class="button">Login</a></li>
+                  <% } else { %>
+                    <li><a href="/logout" class="button">Logout</a></li>
+                  <% } %>
+               </ul>
+            </nav>
+         </header>
+         <!-- Banner -->
+         <section id="banner">
+            <h2>BaroTube - NPM</h2>
+            <p>API key generation site for BaroTube.</p>
+            <p>This module has been made for the purpose of using YouTube API freely upon its limit. </p>
+            <br>
+            <% if (user) { %>
+              <p>Welcome <bold style="font-weight: bold;"><%= user.username %></bold></p>
+            <% } %>
+            <ul class="actions special">
+               <% if (!user) { %>
+                 <li><a href="/login" class="button primary">Login</a></li>
+                 <li><a href="https://www.npmjs.com/package/barotube" target="_blank" class="button">NPM Page</a></li>
+               <% } else { %>
+                 <li><a href="/getkey" class="button primary">get Key</a></li>
+                 <li><a href="https://www.npmjs.com/package/barotube" target="_blank" class="button">NPM Page</a></li>
+               <% } %>
+            </ul>
+         </section>
+         <!-- Footer -->
+         <footer id="footer">
+            <ul class="copyright">
+               <li>&copy; BaroTube. All rights reserved.</li>
+               <li>Design: <a target="_blank" href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+         </footer>
+      </div>
+      <!-- Scripts -->
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/jquery.dropotron.min.js"></script>
+      <script src="/js/jquery.scrollex.min.js"></script>
+      <script src="/js/browser.min.js"></script>
+      <script src="/js/breakpoints.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+   </body>
+</html>
